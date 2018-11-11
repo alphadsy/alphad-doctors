@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
+use App\Models\User;
 use App\Http\Controllers\Controller;
+use App\Utilities\Location;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Validation\Rule;
 
 class RegisterController extends Controller
 {
@@ -51,7 +53,11 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
+            'mobile' => 'required|digits:10|unique:users',
+            'gender' => ['required', Rule::in(['male', 'female'])],
+            'birth_date' => 'required|date',
+            'patient_story' => 'required|min:6|max:255',
+            'location' => ['required', Rule::in(Location::locations())],
         ]);
     }
 
@@ -59,7 +65,7 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\User
+     * @return \App\Models\User
      */
     protected function create(array $data)
     {
@@ -67,6 +73,11 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'mobile' => $data['mobile'],
+            'gender' => $data['gender'],
+            'birth_date' => $data['birth_date'],
+            'patient_story' => $data['patient_story'],
+            'location' => $data['location']
         ]);
     }
 }
