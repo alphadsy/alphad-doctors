@@ -7,6 +7,11 @@ Laravel Medical Consulta Project
 
 ### Views
 
+#### layouts
+
+we use three master layouts with 1-2-3 col and
+left-middle-right sections   
+
 #### Shared Data 
 
 shared data variables you can use across any view
