@@ -27,4 +27,16 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    // get doctor information
+    public function doctor()
+    {
+        return $this->hasOne(Doctor::class, 'user_id');
+    }
+
+    // check if user is doctor
+    public function isDoctor()
+    {
+        return (boolean) $this->doctor()->exists();
+    }
 }

@@ -31,3 +31,12 @@ Location return array of locations
 #### Specializations
 
 Specialization return array of medical specializations
+
+### Requests
+
+CreateDoctor
+UpdateDoctor
+
+###Policies
+
+DoctorPolicies
