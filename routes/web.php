@@ -35,4 +35,18 @@ Route::get('/doctors/search', 'DoctorsController@search')->name('doctors.search'
 Route::get('/doctors/{doctor}', 'DoctorsController@show')->name('doctors.show');
 
 
+/* Articles
+======================*/
+Route::get('articles', 'ArticlesController@index')->name('articles.index');
+
+Route::get('articles/create', 'ArticlesController@create')->name('articles.create');
+Route::post('articles', 'ArticlesController@store')->name('articles.store');
+
+Route::get('/articles/{article}/edit', 'ArticlesController@edit')->name('articles.edit');
+Route::patch('/articles/{article}', 'ArticlesController@update')->name('articles.update');
+
+Route::get('articles/search', 'ArticlesController@search')->name('articles.search');
+
+Route::get('/articles/{article}', 'ArticlesController@show')->name('articles.show');
+
 Route::get('/home', 'HomeController@index')->name('home');

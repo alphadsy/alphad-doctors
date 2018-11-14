@@ -36,7 +36,10 @@ Specialization return array of medical specializations
 
 CreateDoctor
 UpdateDoctor
+CreateArticle
+UpdateArticle
 
 ###Policies
 
 DoctorPolicies
+ArticlePolicies
