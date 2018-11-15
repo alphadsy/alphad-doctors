@@ -39,4 +39,11 @@ class User extends Authenticatable
     {
         return (boolean) $this->doctor()->exists();
     }
+
+    // get user questions
+    public function questions()
+    {
+        return $this->hasMany(Question::class, 'user_id');
+    }
+
 }

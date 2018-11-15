@@ -35,6 +35,21 @@ Route::get('/doctors/search', 'DoctorsController@search')->name('doctors.search'
 Route::get('/doctors/{doctor}', 'DoctorsController@show')->name('doctors.show');
 
 
+/* Questions
+======================*/
+Route::get('questions', 'QuestionsController@index')->name('questions.index');
+
+Route::get('questions/create', 'QuestionsController@create')->name('questions.create');
+Route::post('questions', 'QuestionsController@store')->name('questions.store');
+
+Route::get('questions/search', 'QuestionsController@search')->name('questions.search');
+
+Route::get('/questions/{question}/edit', 'QuestionsController@edit')->name('questions.edit');
+Route::patch('/questions/{question}', 'QuestionsController@update')->name('questions.update');
+
+Route::get('/questions/{question}', 'QuestionsController@show')->name('questions.show');
+
+
 /* Articles
 ======================*/
 Route::get('articles', 'ArticlesController@index')->name('articles.index');

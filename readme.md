@@ -38,8 +38,11 @@ CreateDoctor
 UpdateDoctor
 CreateArticle
 UpdateArticle
+CreateQuestion
+UpdateQuestion
 
 ###Policies
 
 DoctorPolicies
 ArticlePolicies
+QuestionPolicies
