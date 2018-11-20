@@ -49,6 +49,9 @@ Route::patch('/questions/{question}', 'QuestionsController@update')->name('quest
 
 Route::get('/questions/{question}', 'QuestionsController@show')->name('questions.show');
 
+/* Answers
+======================*/
+Route::post('questions/{question}/answers', 'AnswersController@store')->name('answers.store');
 
 /* Articles
 ======================*/
